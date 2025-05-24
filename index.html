@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Вилка</title>
+  <meta charset="UTF-8" />
+  <title>Банка</title>
   <style>
     body {
       margin: 0;
@@ -11,36 +11,63 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #screen1, #screen2 {
+      display: none;
       flex-direction: column;
+      align-items: center;
+      position: absolute;
     }
-    .image-container {
-      position: relative;
-      width: 600px;
-      height: 600px;
+    #screen1 {
+      display: flex;
     }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      display: block;
+    .image {
+      max-width: 100%;
+      height: auto;
     }
     .caption {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      color: white;
       font-size: 32px;
-      font-weight: bold;
-      font-family: sans-serif;
-      text-transform: uppercase;
+      margin-top: -80px;
+      align-self: flex-start;
+      margin-left: 20px;
+    }
+    .button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 24px;
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+    }
+    .text-below {
+      margin-top: 10px;
+      font-size: 28px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="image-container">
-    <img src="https://i.ibb.co/N2gxSty8/bd4c2aae-8871-4489-be4a-8cfad35b638b.png" alt="Вилка">
-    <div class="caption">вилка</div>
+
+  <div id="screen1">
+    <img src="https://i.ibb.co/rK33RRqC/image.jpg" width="600" height="700" />
+    <div class="caption">СКАЖИ БАНКА</div>
+    <button class="button" onclick="nextScreen()">БАНКА</button>
   </div>
+
+  <div id="screen2">
+    <img src="https://i.ibb.co/prJN6NYX/image.jpg" width="600" height="600" />
+    <div class="text-below">ИДИ НАХУЙ</div>
+  </div>
+
+  <script>
+    function nextScreen() {
+      document.getElementById('screen1').style.display = 'none';
+      document.getElementById('screen2').style.display = 'flex';
+    }
+  </script>
+
 </body>
 </html>
-
